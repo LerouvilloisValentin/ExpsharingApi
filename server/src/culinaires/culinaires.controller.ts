@@ -17,7 +17,7 @@ export class CulinairesController {
     }
 
     @Post()
-    createDestination(@Body() newDestination){
-        this.culinairesService.create(newDestination)
+    createCulinaire(@Body() newCulinaire){
+        this.culinairesService.create(newCulinaire)
     }
 }

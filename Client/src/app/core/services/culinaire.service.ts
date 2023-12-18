@@ -12,11 +12,11 @@ export class CulinaireServices {
   constructor(private http: HttpClient){}
 
   getAllCulinaire(): Observable<FaceSnap[]> {
-    return this.http.get<FaceSnap[]>('http://localhost:3000/culinaire')
+    return this.http.get<FaceSnap[]>('http://localhost:3000/culinaires')
   }
 
   getculinaireById(culinaireId: number): Observable<FaceSnap> {
-    return this.http.get<FaceSnap>(`http://localhost:3000/culinaire/${culinaireId}`)
+    return this.http.get<FaceSnap>(`http://localhost:3000/culinaires/${culinaireId}`)
 
   }
   // snapFaceSnapById(faceSnapId: number, snapType: 'snap' | 'unsnap'): Observable<FaceSnap> {
@@ -40,7 +40,7 @@ export class CulinaireServices {
       createdDate: new Date(),
       id: previousFacesnaps.id + 1
     })),
-    switchMap(newFacesnap=> this.http.post<FaceSnap>('http://localhost:3000/culinaire', newFacesnap))
+    switchMap(newFacesnap=> this.http.post<FaceSnap>('http://localhost:3000/culinaires', newFacesnap))
    )
   }
 }

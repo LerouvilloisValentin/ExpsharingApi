@@ -6,7 +6,7 @@ import { FooterComponent } from 'src/app/footer/footer.component';
 
 @Component({
   selector: 'app-landing-page-component',
-  templateUrl: './landing-page-component.html', 
+  templateUrl: './landing-page-component.html',
   styleUrls: ['./landing-page-component.scss']
 })
 export class LandingPageComponent implements OnInit {
@@ -28,11 +28,11 @@ export class LandingPageComponent implements OnInit {
   }
 
   onClickMenuCulinaire() : void {
-    this.router.navigateByUrl('culinaire')
+    this.router.navigateByUrl('culinaires')
   }
 
   onClickMenuGame() : void {
-    this.router.navigateByUrl('game')
+    this.router.navigateByUrl('games')
   }
 
   onSubmitForm(form : NgForm): void {

@@ -75,14 +75,14 @@ export class NewFaceSnapComponent implements OnInit {
       this.faceSnapsServices.addFaceSnap(this.snapForm.value).pipe(
         tap(()=> this.router.navigateByUrl("/destinations"))
         ).subscribe()
-      } else if ( currentUrl === "/culinaire/create"){
+      } else if ( currentUrl === "/culinaires/create"){
         this.culinaireServices.addCulinaireExp(this.snapForm.value).pipe(
-          tap(()=> this.router.navigateByUrl("/culinaire"))
+          tap(()=> this.router.navigateByUrl("/culinaires"))
           ).subscribe()
       }
-      else if ( currentUrl === "/game/create"){
+      else if ( currentUrl === "/games/create"){
         this.gameServices.addGameExp(this.snapForm.value).pipe(
-          tap(()=> this.router.navigateByUrl("/game"))
+          tap(()=> this.router.navigateByUrl("/games"))
           ).subscribe()
       }
   }

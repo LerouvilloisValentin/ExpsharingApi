@@ -18,14 +18,14 @@ export class HeaderComponent {
     const currentUrl = this.router.url
     if(currentUrl === "/destinations"){
       this.router.navigateByUrl("destinations/create")
-    } else if (currentUrl === "/culinaire") {
-      this.router.navigateByUrl("culinaire/create")
-    }else if (currentUrl === "/game") {
-      this.router.navigateByUrl("game/create")
+    } else if (currentUrl === "/culinaires") {
+      this.router.navigateByUrl("culinaires/create")
+    }else if (currentUrl === "/games") {
+      this.router.navigateByUrl("games/create")
     }
   }
 
   isFaceSnapRoute(): boolean {
-    return this.router.url === '/destinations' || this.router.url === '/culinaire' || this.router.url === '/game'  ;
+    return this.router.url === '/destinations' || this.router.url === '/culinaires' || this.router.url === '/games'  ;
   }
 }

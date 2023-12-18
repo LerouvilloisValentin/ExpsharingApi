@@ -3,7 +3,7 @@
 [ngClass]="{snapped : buttonText === 'DarkMode'}"
 *ngIf="faceSnap$ | async as faceSnap">
 <h2>{{ faceSnap.title | titlecase }}</h2>
-<button routerLink="/culinaire" style="color:white">Back</button>
+<button routerLink="/culinaires" style="color:white">Back</button>
 <img *ngIf="faceSnap.imageUrl" [src]="faceSnap.imageUrl" [alt]="faceSnap.title" >
 <p>{{ faceSnap.description }}</p>
 <p style="color: rgb(199, 86, 86)">Mise en ligne le {{ faceSnap.createdDate | date: 'longDate'}}</p>

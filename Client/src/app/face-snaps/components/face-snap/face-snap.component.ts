@@ -38,10 +38,10 @@ onViewFaceSnap(){
     const currentUrl = this.router.url
     if ( currentUrl === "/destinations"){
       this.router.navigateByUrl(`destinations/${this.faceSnap.id}`)
-    } else if ( currentUrl === "/culinaire"){
-      this.router.navigateByUrl(`culinaire/${this.faceSnap.id}`)
-    } else if ( currentUrl === "/game"){
-      this.router.navigateByUrl(`game/${this.faceSnap.id}`)
+    } else if ( currentUrl === "/culinaires"){
+      this.router.navigateByUrl(`culinaires/${this.faceSnap.id}`)
+    } else if ( currentUrl === "/games"){
+      this.router.navigateByUrl(`games/${this.faceSnap.id}`)
     }
   }
 }

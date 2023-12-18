@@ -11,11 +11,11 @@ export class GameServices {
   constructor(private http: HttpClient){}
 
   getAllGame(): Observable<FaceSnap[]> {
-    return this.http.get<FaceSnap[]>('http://localhost:3000/game')
+    return this.http.get<FaceSnap[]>('http://localhost:3000/games')
   }
 
   getGameById(GameId: number): Observable<FaceSnap> {
-    return this.http.get<FaceSnap>(`http://localhost:3000/game/${GameId}`)
+    return this.http.get<FaceSnap>(`http://localhost:3000/games/${GameId}`)
 
   }
   // snapFaceSnapById(faceSnapId: number, snapType: 'snap' | 'unsnap'): Observable<FaceSnap> {
@@ -39,7 +39,7 @@ export class GameServices {
       createdDate: new Date(),
       id: previousFacesnaps.id + 1
     })),
-    switchMap(newFacesnap=> this.http.post<FaceSnap>('http://localhost:3000/game', newFacesnap))
+    switchMap(newFacesnap=> this.http.post<FaceSnap>('http://localhost:3000/games', newFacesnap))
    )
   }
 }

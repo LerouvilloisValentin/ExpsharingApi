@@ -1,7 +1,6 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { DestinationsService } from './destinations.service';
 import { Destination } from './interfaces/destination.interface';
-import { Observable } from 'rxjs';
 
 @Controller('destinations')
 export class DestinationsController {

@@ -12,11 +12,11 @@ export class FaceSnapsServices {
   constructor(private http: HttpClient){}
 
   getAllFaceSnaps(): Observable<FaceSnap[]> {
-    return this.http.get<FaceSnap[]>('http://localhost:3000/destinations')
+    return this.http.get<FaceSnap[]>('https://api-expsharing.onrender.com/destinations')
   }
 
   getFaceSnapById(faceSnapId: number): Observable<FaceSnap> {
-    return this.http.get<FaceSnap>(`http://localhost:3000/destinations/${faceSnapId}`)
+    return this.http.get<FaceSnap>(`https://api-expsharing.onrender.com/destinations/${faceSnapId}`)
 
   }
   snapFaceSnapById(faceSnapId: number, snapType: 'snap' | 'unsnap'): Observable<FaceSnap> {
@@ -25,7 +25,7 @@ export class FaceSnapsServices {
         ...faceSnap,
         snaps: faceSnap.snaps + (snapType === 'snap'? 1 : -1)
       })),
-      switchMap(updateFaceSnap => this.http.put<FaceSnap>(`http://localhost:3000/destinations/${faceSnapId}`, updateFaceSnap))
+      switchMap(updateFaceSnap => this.http.put<FaceSnap>(`https://api-expsharing.onrender.com/destinations/${faceSnapId}`, updateFaceSnap))
     )
   }
 
@@ -40,7 +40,7 @@ export class FaceSnapsServices {
       createdDate: new Date(),
       id: previousFacesnaps.id + 1
     })),
-    switchMap(newFacesnap=> this.http.post<FaceSnap>('http://localhost:3000/destinations', newFacesnap))
+    switchMap(newFacesnap=> this.http.post<FaceSnap>('http://api-expsharing.onrender.com/destinations', newFacesnap))
    )
   }
 }

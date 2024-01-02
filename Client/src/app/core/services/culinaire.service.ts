@@ -12,11 +12,11 @@ export class CulinaireServices {
   constructor(private http: HttpClient){}
 
   getAllCulinaire(): Observable<FaceSnap[]> {
-    return this.http.get<FaceSnap[]>('https://api-expsharing.onrender.com/culinaires')
+    return this.http.get<FaceSnap[]>('https://expsharing-be691858f2b1.herokuapp.com/culinaires')
   }
 
   getculinaireById(culinaireId: number): Observable<FaceSnap> {
-    return this.http.get<FaceSnap>(`https://api-expsharing.onrender.com/culinaires/${culinaireId}`)
+    return this.http.get<FaceSnap>(`https://expsharing-be691858f2b1.herokuapp.com/culinaires/${culinaireId}`)
 
   }
   // snapFaceSnapById(faceSnapId: number, snapType: 'snap' | 'unsnap'): Observable<FaceSnap> {
@@ -25,7 +25,7 @@ export class CulinaireServices {
   //       ...faceSnap,
   //       snaps: faceSnap.snaps + (snapType === 'snap'? 1 : -1)
   //     })),
-  //     switchMap(updateFaceSnap => this.http.put<FaceSnap>(`https://api-expsharing.onrender.com/facesnaps/${faceSnapId}`, updateFaceSnap))
+  //     switchMap(updateFaceSnap => this.http.put<FaceSnap>(`https://expsharing-be691858f2b1.herokuapp.com/facesnaps/${faceSnapId}`, updateFaceSnap))
   //   )
   // }
 
@@ -40,7 +40,7 @@ export class CulinaireServices {
       createdDate: new Date(),
       id: previousFacesnaps.id + 1
     })),
-    switchMap(newFacesnap=> this.http.post<FaceSnap>('https://api-expsharing.onrender.com/culinaires', newFacesnap))
+    switchMap(newFacesnap=> this.http.post<FaceSnap>('https://expsharing-be691858f2b1.herokuapp.com/culinaires', newFacesnap))
    )
   }
 }

@@ -12,11 +12,11 @@ export class FaceSnapsServices {
   constructor(private http: HttpClient){}
 
   getAllFaceSnaps(): Observable<FaceSnap[]> {
-    return this.http.get<FaceSnap[]>('https://api-expsharing.onrender.com/destinations')
+    return this.http.get<FaceSnap[]>('https://expsharing-be691858f2b1.herokuapp.com/destinations')
   }
 
   getFaceSnapById(faceSnapId: number): Observable<FaceSnap> {
-    return this.http.get<FaceSnap>(`https://api-expsharing.onrender.com/destinations/${faceSnapId}`)
+    return this.http.get<FaceSnap>(`https://expsharing-be691858f2b1.herokuapp.com/destinations/${faceSnapId}`)
 
   }
   snapFaceSnapById(faceSnapId: number, snapType: 'snap' | 'unsnap'): Observable<FaceSnap> {
@@ -25,7 +25,7 @@ export class FaceSnapsServices {
         ...faceSnap,
         snaps: faceSnap.snaps + (snapType === 'snap'? 1 : -1)
       })),
-      switchMap(updateFaceSnap => this.http.put<FaceSnap>(`https://api-expsharing.onrender.com/destinations/${faceSnapId}`, updateFaceSnap))
+      switchMap(updateFaceSnap => this.http.put<FaceSnap>(`https://expsharing-be691858f2b1.herokuapp.com/destinations/${faceSnapId}`, updateFaceSnap))
     )
   }
 
